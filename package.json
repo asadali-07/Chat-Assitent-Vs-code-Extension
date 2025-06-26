@@ -1,0 +1,52 @@
+{
+  "name": "chat-assistant",
+  "displayName": "Chat Assistant",
+  "description": "AI assistant powered by Gemini",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.70.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:chat-assistant.openChat"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "chat-assistant.openChat",
+        "title": "Chat Assistant: Open Chat",
+        "category": "Chat Assistant"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test",
+    "build-react": "cd react-ui && npm run build",
+    "dev": "concurrently \"npm run watch\" \"cd react-ui && npm run dev\"",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.4",
+    "@types/vscode": "^1.70.0",
+    "typescript": "^5.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.14.1",
+    "@typescript-eslint/parser": "^7.11.0",
+    "eslint": "^8.57.0",
+    "@vscode/test-cli": "^0.0.9",
+    "@vscode/test-electron": "^2.4.0",
+    "concurrently": "^8.2.2",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "@google/genai": "^1.7.0",
+    "dotenv": "^16.0.0"
+  }
+}
