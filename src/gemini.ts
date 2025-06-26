@@ -3,7 +3,7 @@ dotenv.config();
 
 import { GoogleGenAI } from "@google/genai";
 
-const apiKey = process.env.GEMINI_API_KEY;
+const apiKey = 'AIzaSyCOveNVFplxXkakOl1Xg4uon8Ers5MceHI';
 console.log("🔑 GEMINI_API_KEY:", apiKey ? "Loaded" : "Not found");
 if (!apiKey) throw new Error("❌ GEMINI_API_KEY not found in .env file");
 
